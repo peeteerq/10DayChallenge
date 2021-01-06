@@ -20,7 +20,7 @@ port =465
 passw = getpass.getpass()
 #print(passw)
 
-sender = "piotrmilek92@gmail.com"
+sender = "sendermail@gmail.com"
 receiver = ""
 
 message = MIMEMultipart("alternative")
@@ -73,5 +73,5 @@ with open("C:/Users/milek/Documents/addr.csv") as file:
         part1 = MIMEText(text, "plain")
         message.attach(part1)
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-            server.login("piotrmilekcode@gmail.com", passw)
+            server.login("your_receiver_mail@gmail.com", passw)
             server.sendmail(sender, receiver, message.as_string())
